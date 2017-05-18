@@ -2,7 +2,7 @@
 
 var app = angular.module('app', ['ngRoute', 'ngResource', 'ui.bootstrap.pagination']);
 
-app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net');
+app.constant('baseServiceUrl', 'http://adsapi.ivelinmitev.com');
 app.constant('pageSize', 10);
 
 app.config(function ($routeProvider) {
