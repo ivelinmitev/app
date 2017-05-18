@@ -1,0 +1,36 @@
+<div class="publishNewAd-form animated slideInRight">
+    <h2>Publish New Ad</h2>
+    <div class="content">
+        <div>
+            <input type="text" id="title" ng-model="adData.title" placeholder="Title" required />
+        </div>
+        <div>
+            <textarea id="text" ng-model="adData.text" placeholder="Text" required></textarea>
+        </div>
+        <div>
+            <label for="image">Image:</label><br>
+            <input type="file" id="image"
+                   onchange="angular.element(this).scope().fileSelected(this)" />
+            <div class="image-box">
+                <p>Image Preview</p>
+            </div>
+        </div>
+        <div>
+            <select id="category" ng-model="adData.categoryId">
+                <option value="null">Category</option>
+                <option ng-repeat="c in categories" value="{{c.id}}">{{c.name}}</option>
+            </select>
+        </div>
+        <div>
+            <select id="town" ng-model="adData.townId">
+                <option value="null">Town</option>
+                <option ng-repeat="town in towns" value="{{town.id}}">{{town.name}}</option>
+            </select>
+        </div>
+        <div>
+            <a ng-click="publishAd(adData)" class="button">Publish</a>
+            <a href="#/user/ads" class="button button-cancel">Cancel</a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>

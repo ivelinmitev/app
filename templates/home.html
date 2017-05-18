@@ -1,0 +1,25 @@
+<ul class="ads">
+    <li ng-repeat="ad in ads.ads" class="well animated slideInRight " data-id="{{ad.id}}">
+        <div ng-if='ad.imageDataUrl' class="pull-left col-md-4 col-sm-12 imageContainer">
+            <img class="ad-image" ng-src="{{ad.imageDataUrl}}" />
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <h1>{{ad.title}}</h1>
+            <div><strong>Date:</strong> {{ad.date | date:'dd-MMM-yyyy'}}</div>
+            <div><strong>Text:</strong> {{ad.text}}</div>
+            <div><strong>Name:</strong> {{ad.ownerName}}</div>
+            <div><strong>Email:</strong> {{ad.ownerEmail}}</div>
+            <div><strong>Phone:</strong> {{ad.ownerPhone}}</div>
+        </div>
+        <div class="clearfix"></div>
+    </li>
+</ul>
+
+<pagination total-items="ads.numItems" ng-model="adsParams.startPage"
+            items-per-page="adsParams.pageSize" ng-change="reloadAds()"
+            max-size="5" boundary-links="true">
+</pagination>
+
+<div ng-if="ads.ads.length==0" class="box no-data">
+    No ads found.
+</div>

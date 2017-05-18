@@ -1,0 +1,16 @@
+<div class="login-form animated slideInRight">
+   <h2>Login</h2>
+    <div class="content">
+        <div>
+            <input type="text" id="username" ng-model="userData.username" placeholder="Username" required />
+        </div>
+        <div>
+            <input type="password" id="password" ng-model="userData.password" placeholder="Password" required />
+        </div>
+        <div>
+            <a ng-click="login(userData)" class="button">Login</a>
+            <a href="#/register" class="button button-register">Register</a>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
